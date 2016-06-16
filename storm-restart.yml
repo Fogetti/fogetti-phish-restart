@@ -1,0 +1,5 @@
+---
+- hosts: "{{ env }}_storm_workers"
+  roles:
+    - common
+    - storm-restart

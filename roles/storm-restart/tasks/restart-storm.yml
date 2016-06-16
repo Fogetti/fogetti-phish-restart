@@ -1,0 +1,12 @@
+---
+- name: kill the topology
+  command: "{{ storm_binary }} kill {{ topology_name }}"
+  remote_user: "{{ user }}"
+  become: yes
+  become_user: root
+
+- name: Restarting Apache Storm Supervisor
+  supervisorctl: name=storm-supervisor state=restarted
+  remote_user: "{{ user }}"
+  become: yes
+  become_user: root

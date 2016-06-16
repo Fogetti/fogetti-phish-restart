@@ -1,0 +1,16 @@
+pub_key: "{{ pub_key_dir }}/id_rsa.pub"
+apache_mirror: http://apache.mirrors.tds.net
+storm_version: "1.0.1"
+zookeeper_version: "3.4.7"
+zookeeper_mirror: http://archive.apache.org
+home_dir: "/home/{{ user }}"
+downloads_dir: "{{ home_dir }}/downloads"
+zookeeper_dir: "{{ downloads_dir }}/zookeeper-{{ zookeeper_version }}"
+storm_dir: "{{ downloads_dir }}/apache-storm-{{ storm_version }}"
+bin_dir: "{{ storm_dir }}/bin"
+lib_dir: "{{ storm_dir }}/lib"
+conf_dir: "{{ storm_dir }}/conf"
+log4j2_dir: "{{ storm_dir }}/log4j2"
+logs_dir: "{{ storm_dir }}/logs"
+input_dir: "{{ nfs_dir }}/input"
+storm_binary: "{{ bin_dir }}/storm"
